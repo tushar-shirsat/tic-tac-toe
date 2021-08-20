@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #4c6986;
+}
+.title{
+    max-width: 550px;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 800px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.restart{
+    width: 175px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 100vw;
+    border: 2px solid #4c6986;
+    transition: all 250ms ease;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.restart:hover{
+    background-color: #4c6986;
+    color: #fff;
+}
+
+.game{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    color: #9a9a9a;
+    margin-bottom: 5px;
+    transition: all 250ms linear;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex-grow: 1;
+    grid-gap: 0;
+}
+
+.board-tile{
+    display: grid;
+    place-items: center;
+    font-size: 80px;
+}
+.board-tile:not(:nth-child(3n)){
+    border-right: 3px solid rgba(137,163,189,0.5);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)){
+    border-bottom: 3px solid rgba(137,163,189,0.5);
+}
+.header .player-x,
+.header .player-o{
+    flex: 1;
+    border-bottom: 3px solid #eee;
+    padding-bottom: 5px;
+    transition: all 250ms ease-in;
+}
+
+.board-tile:hover{
+    background-color: #eee;
+    cursor: pointer;
+}
+
+h1{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.player-x.active{
+    color: #42bed7;
+    border-color: #42bed7;
+}
+.player-o.active{
+    color: #D7BAFB;
+    border-color: #D7BAFB;
+}
+.player-x.winner,.player-o.winner{
+    color: #23CE68 !important;
+    border-color: #23CE68 !important;
+}
+
+.tile-x{
+    color: #42bed7;
+}
+.tile-o{
+    color: #D7BAFB;
+}
+
+.tile-winner span{
+    color: #23CE68 !important;
+}
+
+@media only screen and (max-width: 1200px){
+    .wrapper{
+        flex-direction: column;
+        gap: 50px;
+        height: auto;
+    }
+}
